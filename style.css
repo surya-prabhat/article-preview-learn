@@ -1,0 +1,295 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #edf2f8;
+}
+
+.article-component {
+    position: relative;
+    border: 1px solid red;
+    display: flex;
+    max-width: fit-content;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.image-left {
+    width: 400px;
+    height: 400px;
+
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.information {
+    max-width: 600px;
+    padding: 40px;
+    background-color: #fff;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.main-heading {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.10rem;
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+    margin-bottom: 20px;
+}
+
+.main-info {
+    line-height: 1.8rem;
+    font-weight: 300;
+    color: hsl(214, 17%, 51%);
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    /* border-radius: 50%; */
+    margin-right: 20px;
+}
+
+.share {
+    margin-left: auto;
+    margin-right: 69px;
+}
+
+.name {
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+}
+
+.date {
+    color: hsl(214, 17%, 51%);
+}
+
+.share {
+    /* border: 1px solid red; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #e5eef7;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.svg-share {
+    fill: #6E8098;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.share:hover {
+    background-color: #6E8098;
+    color: #fff;
+}
+
+.svg-share:hover {
+    fill: #fff;
+}
+
+/* HTML: <div class="tooltip">This is a Speech Bubble with a solid coloration and with border radius </div> */
+.tooltip {
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    max-width: fit-content;
+    text-align: center;
+    top: 226px;
+    left: 775px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s ease-in-out;
+}
+
+.tooltip {
+    /* triangle dimension */
+    --b: 2em;
+    /* base */
+    --h: 1em;
+    /* height */
+
+    --p: 50%;
+    /* triangle position (0%:left 100%:right) */
+    --r: 1.2em;
+    /* the radius */
+    --c: #4a556b;
+
+    padding: 0.7em;
+    border-radius: var(--r) var(--r) min(var(--r), 100% - var(--p) - var(--b)/2) min(var(--r), var(--p) - var(--b)/2)/var(--r);
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%,
+            min(100%, var(--p) + var(--b)/2) 100%,
+            var(--p) calc(100% + var(--h)),
+            max(0%, var(--p) - var(--b)/2) 100%);
+    background: var(--c);
+    border-image: conic-gradient(var(--c) 0 0) fill 0/ var(--r) calc(100% - var(--p) - var(--b)/2) 0 calc(var(--p) - var(--b)/2)/ 0 0 var(--h) 0;
+}
+
+.share-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    margin-left: 15px;
+}
+
+.links {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tooltip-on {
+    opacity: 1;
+
+}
+
+
+.share-mobile {
+    display: none;
+}
+
+/* For mobile */
+
+@media (max-width: 365px) {
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .article-component {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        max-height: fit-content;
+    }
+
+    .tooltip {
+        position: static;
+        opacity: 1;
+        display: none;
+    }
+
+    .image {
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 30px;
+    }
+
+    .image-left {
+        width: 350px;
+        height: 200px;
+
+    }
+
+    .information {
+        padding: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0px;
+
+    }
+
+    .main-heading {
+        font-size: 1.05rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.05rem;
+    }
+
+    .main-info {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .profile-pic {
+        height: 40px;
+        width: 40px;
+    }
+
+    .name {
+        font-size: 0.9rem;
+    }
+
+    .date {
+        font-size: 0.9rem;
+    }
+
+    .share {
+        margin-right: 0px;
+    }
+
+    .share-mobile {
+        background-color: rgb(71, 86, 105);
+        position: absolute;
+        z-index: -1;
+        top: 446px;
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        padding-bottom: 26px;
+        opacity: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        align-items: center;
+        transition: opacity 0.3s, background-color 0.3s ease-in-out;
+        
+    }
+
+    .links {
+        margin-left: auto;
+    }
+
+    .share-text {
+        font-size: 1rem;
+        color: #6d7f97;
+    }
+
+    .share-mobile-on {
+        z-index: 1;
+        opacity: 1;
+    }
+
+
+}
